@@ -60,6 +60,13 @@
 			<version>2.8.0</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -107,7 +114,7 @@
 				<version>${maven.surefire.version}</version>
 				<configuration>
 					<includes>
-						<include>**/ParallelRun.java</include>
+						<include>**/*TestRunner.java</include>
 					</includes>
 					<parallel>methods</parallel>
 					<threadCount>4</threadCount>

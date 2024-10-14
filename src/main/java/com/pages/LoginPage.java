@@ -1,32 +1,29 @@
 package com.pages;
 import org.openqa.selenium.WebDriver;
-import com.locators.LoginPageLocators;
+import com.qa.utils.CommonStepsAction;
 
 public class LoginPage {
 	public WebDriver driver;
-	public LoginPageLocators loginPageLocators = new LoginPageLocators();
+	CommonStepsAction action = new CommonStepsAction(driver);
 	
 	// Constructor of the page class
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	public void launchUrl() {
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-	}
 	
-	public String getText() {
-		return driver.findElement(loginPageLocators.loginHeaderTxt).getText();
+	public String getText(String ele) {
+		return action.getElement(ele).getText();
 	}
 	
 	public String getTitle() {
 		return driver.getTitle();
 	}
 	
-	public void enterText(String userName) {
-		driver.findElement(loginPageLocators.usernameInputTextBox).sendKeys(userName);
+	public void enterText(String userName, String ele) {
+		action.getElement(ele).sendKeys(userName);
 	}
 	
-	public void click() {
-		driver.findElement(loginPageLocators.loginButton).click();
+	public void click(String ele) {
+		action.getElement(ele).click();
 	}
 }

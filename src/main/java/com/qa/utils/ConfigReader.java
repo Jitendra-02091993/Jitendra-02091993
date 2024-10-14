@@ -14,16 +14,50 @@ public class ConfigReader {
 	 * @return it return properties prop object
 	 */
 	public Properties init_prop() {
+		String env = System.getProperty("ENV").toString();
+//		String env = "QA";
+		System.out.println("env is a ------ "+env);
 		prop = new Properties();
-		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/configFile/configQA.properties");
-			prop.load(ip);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		switch (env) {
+		case "QA":
+			System.out.println("Inside loop");
+			try {
+				FileInputStream ip = new FileInputStream("./src/test/resources/configFile/configQA.properties");
+				prop.load(ip);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+			
+		case "DEV":
+			try {
+				FileInputStream ip = new FileInputStream("./src/test/resources/configFile/configDEV.properties");
+				prop.load(ip);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+
+		default:
+			try {
+				FileInputStream ip = new FileInputStream("./src/test/resources/configFile/configQA.properties");
+				prop.load(ip);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		}
 		return prop;
 		

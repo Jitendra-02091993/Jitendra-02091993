@@ -1,12 +1,13 @@
 Feature: Validate Login Page
+Background: Pre-Requisite
+	Given user launch the url
 	
 	Scenario: To Validate the title of the Login Page
-	When user is on login page
 	Then validate title is equal to "OrangeHRM"
 	
 	@Sanity
 	Scenario: To Validate login with valid credentials
-	When user is on login page
-	When user enter username in "Admin"
-	When user enter password in "admin123"
-	Then user click on loginButton
+	When user enter "Admin" in "usernameInputTextBox"
+	When user enter "admin123" in "passwordInputTextBox"
+	Then user click on "loginButton"
+	Then user wait for "2" seconds
