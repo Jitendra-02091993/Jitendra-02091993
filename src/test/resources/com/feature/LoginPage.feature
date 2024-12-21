@@ -9,5 +9,6 @@ Background: Pre-Requisite
 	Scenario: To Validate login with valid credentials
 	When user enter "Admin" in "usernameInputTextBox"
 	When user enter "admin123" in "passwordInputTextBox"
+	Then user wait for "2" seconds
 	Then user click on "loginButton"
 	Then user wait for "2" seconds

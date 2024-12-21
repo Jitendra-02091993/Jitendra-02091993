@@ -24,7 +24,6 @@ public class RepositoryParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public By getObjectLocator(String locatorName) {

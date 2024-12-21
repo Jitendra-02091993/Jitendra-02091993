@@ -8,7 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/com/feature"},
 		tags = "@Sanity",
 		glue = {"stepDefinitions","commonSteps","applicationHook"},
-		plugin = {"pretty","com.avenstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+		plugin = {"pretty",
+//				"com.avenstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		}
 		)
 
