@@ -11,4 +11,6 @@ Background: Pre-Requisite
 	When user enter "admin123" in "passwordInputTextBox"
 	Then user wait for "2" seconds
 	Then user click on "loginButton"
-	Then user wait for "2" seconds
+	When user wait for "2" seconds
+	Given test data file is "PracticeTest.xlsx"
+  Then print number of sheets in workBook "PracticeTest.xlsx"
