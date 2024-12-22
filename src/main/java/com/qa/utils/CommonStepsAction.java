@@ -2,24 +2,18 @@ package com.qa.utils;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
-
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import com.aventstack.extentreports.util.Assert;
-
 import io.cucumber.datatable.DataTable;
 
 public class CommonStepsAction {
 	private WebDriver driver;
 	private RepositoryParser parser;
 	public ConfigReader configReader = new ConfigReader();
+	
 
 	// Constructor of the page class
 	public CommonStepsAction(WebDriver driver) {
