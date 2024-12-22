@@ -1,15 +1,6 @@
 package com.qa.utils;
 
-import org.openqa.selenium.WebDriver;
-
 public class globalVar {
-	private WebDriver driver;
-	
-	public globalVar(WebDriver driver) {
-		this.driver = driver;
-	}
-	
-	
 	public static String globalTestDataFile = "some value";
 	private static String apiResponseName;
 	private static String fileUploadTAG = "";
