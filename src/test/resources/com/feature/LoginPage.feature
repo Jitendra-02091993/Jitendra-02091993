@@ -16,9 +16,11 @@ Feature: Validate Login Page
     Then user wait for "2" seconds
     Then user click on "loginButton"
     When user wait for "2" seconds
+    Then verify below elements are visible
+      | invalidCredentialsErrorText |
     
 
-  @Sanity
+  @Sanitys
   Scenario: To Validate login with in-valid credentials
     Given test data file is "PracticeTest.xlsx"
     When user enter "admin123" in "passwordInputTextBox"

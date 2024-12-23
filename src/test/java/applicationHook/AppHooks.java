@@ -6,8 +6,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import com.qa.factory.DriverFactory;
 import com.qa.utils.ConfigReader;
-import com.qa.utils.Log;
-
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import io.cucumber.java.After;
@@ -29,12 +27,10 @@ public class AppHooks {
 
     @Before(order = 1)
     public void initializeBrowser() {
-//    	log = LogManager.getLogger(this.getClass().getName());
         String browserName = prop.getProperty("browser");
         driverFactory = new DriverFactory();
         driver = driverFactory.init_Driver(browserName);
         logger.info("Browser Initialized");
-//        Log.startTestCase("Test-----------");
     }
     
 
