@@ -14,15 +14,15 @@ public class DriverFactory {
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	
 	/**
-	 * This method is used to initialise the thread local driver on the basis of given browser
+	 * This method is used to initialize the thread local driver on the basis of given browser
 	 * @param browser
 	 * @return this will return tlDriver
 	 */
 	public WebDriver init_Driver(String browser) {
-		if(browser.equals("chrome")) {
+		if(browser.toLowerCase().equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
-		}else if(browser.equals("edge")) {
+		}else if(browser.toLowerCase().equals("edge")) {
 			WebDriverManager.edgedriver().setup();
 			tlDriver.set(new EdgeDriver());
 		}
